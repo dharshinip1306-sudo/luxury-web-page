@@ -2,58 +2,63 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-let blogPosts = [];
+// Serve frontend files
+app.use(express.static("public"));
 
-/* ===========================
-   GET ALL BLOGS
-=========================== */
 
-app.get("/api/blogs", (req, res) => {
-    res.json(blogPosts);
+// Home page
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
 });
 
-/* ===========================
-   ADD BLOG
-=========================== */
 
+// Store blogs temporarily
+let blogs = [];
+
+
+// Get all blogs
+app.get("/api/blogs", (req, res) => {
+    res.json(blogs);
+});
+
+
+// Add new blog
 app.post("/api/blogs", (req, res) => {
 
-    const { title, author, category, content } = req.body;
+    const { title, author, content } = req.body;
 
     if (!title || !author || !content) {
         return res.status(400).json({
-            message: "Please fill all required fields."
+            message: "All fields are required"
         });
     }
 
     const newBlog = {
-    id: Date.now(),
-    title,
-    author,
-    category: category || "Technology",
-    content
-};
+        id: Date.now(),
+        title,
+        author,
+        content
+    };
 
-    blogPosts.push(newBlog);
+    blogs.push(newBlog);
 
-    res.status(201).json(newBlog);
-
+    res.status(201).json({
+        message: "Blog submitted successfully",
+        blog: newBlog
+    });
 });
 
-/* ===========================
-   EDIT BLOG
-=========================== */
 
+// Edit blog
 app.put("/api/blogs/:id", (req, res) => {
 
     const id = Number(req.params.id);
 
-    const blog = blogPosts.find(b => b.id === id);
+    const blog = blogs.find(blog => blog.id === id);
 
     if (!blog) {
         return res.status(404).json({
@@ -61,37 +66,31 @@ app.put("/api/blogs/:id", (req, res) => {
         });
     }
 
-    blog.title = req.body.title;
-    blog.author = req.body.author;
-    blog.category = req.body.category;
-    blog.content = req.body.content;
+    blog.title = req.body.title || blog.title;
+    blog.author = req.body.author || blog.author;
+    blog.content = req.body.content || blog.content;
 
-    res.json(blog);
-
+    res.json({
+        message: "Blog updated successfully",
+        blog
+    });
 });
 
-/* ===========================
-   DELETE BLOG
-=========================== */
 
+// Delete blog
 app.delete("/api/blogs/:id", (req, res) => {
 
     const id = Number(req.params.id);
 
-    blogPosts = blogPosts.filter(blog => blog.id !== id);
+    blogs = blogs.filter(blog => blog.id !== id);
 
     res.json({
         message: "Blog deleted successfully"
     });
-
 });
 
-/* ===========================
-   START SERVER
-=========================== */
 
-app.listen(PORT, () => {
-
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
-
+// Start server
+app.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
 });
