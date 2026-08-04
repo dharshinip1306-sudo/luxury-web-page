@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Golden Ink | Write Story</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-feather"></i>
+
+                <span>Golden Ink</span>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="blog.html">Articles</a></li>
+
+                <li><a href="add-blog.html" class="gold-btn active">Write Story</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-hero">
+
+        <p class="hero-tag">Share Your Ideas</p>
+
+        <h1>Write a New Story</h1>
+
+        <p>
+            Every great story begins with a single idea. Share yours with the world.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= BLOG FORM ================= -->
+
+    <section class="editor-section">
+
+        <div class="editor-card">
+
+            <form id="blogForm">
+
+                <!-- Title -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-heading"></i>
+                        Story Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter your story title"
+                        required>
+
+                </div>
+
+
+
+                <!-- Author -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Author
+                    </label>
+
+                    <input
+                        type="text"
+                        id="author"
+                        placeholder="Your name"
+                        required>
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-bookmark"></i>
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option>Technology</option>
+
+                        <option>Programming</option>
+
+                        <option>Lifestyle</option>
+
+                        <option>Travel</option>
+
+                        <option>Education</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Content -->
+
+                <div class="form-group">
+
+                    <label>
+                        <i class="fa-solid fa-pen"></i>
+                        Story Content
+                    </label>
+
+                    <textarea
+                        id="content"
+                        rows="12"
+                        placeholder="Start writing your story..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- Buttons -->
+
+                <div class="editor-buttons">
+
+                    <button type="reset" class="secondary-btn">
+
+                        Clear
+
+                    </button>
+
+                    <button type="submit" class="primary-btn">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Publish Story
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WRITING TIPS ================= -->
+
+    <section class="tips-section">
+
+        <h2>Writing Tips</h2>
+
+        <div class="tips-grid">
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <h3>Be Original</h3>
+
+                <p>
+                    Share your own ideas and experiences to create authentic stories.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <h3>Engage Readers</h3>
+
+                <p>
+                    Use clear language and organize your content into readable sections.
+                </p>
+
+            </div>
+
+            <div class="tip-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h3>Leave an Impact</h3>
+
+                <p>
+                    End your story with a memorable conclusion or key takeaway.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>Golden Ink</h2>
+
+            <p>
+                Write with passion. Inspire with every story.
+            </p>
+
+        </div>
+
+    </footer>
+
+<!-- Toast Notification -->
+
+<div id="toast" class="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div>
+
+        <h4 id="toastTitle">Success</h4>
+
+        <p id="toastMessage">
+            Message
+        </p>
+
+    </div>
+
+</div>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Golden Ink | Luxury Blog</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-feather"></i>
+        <span>Golden Ink</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Articles</a></li>
+        <li><a href="add-blog.html" class="gold-btn">Write Story</a></li>
+    </ul>
+
+</nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-tag">
+                Premium Digital Magazine
+            </p>
+
+            <h1>
+                Stories That Inspire,
+                Ideas That Last.
+            </h1>
+
+            <p class="hero-text">
+
+                Explore thoughtful articles, personal experiences,
+                and creative ideas crafted with elegance.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="blog.html" class="primary-btn">
+                    Explore Articles
+                </a>
+
+                <a href="add-blog.html" class="secondary-btn">
+                    Write Your Story
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ================= FEATURED STORY ================= -->
+
+<section class="featured">
+
+    <h2>Editor's Choice</h2>
+
+    <div class="featured-card">
+
+        <div class="featured-content">
+
+            <span class="category">Technology</span>
+
+            <h3>
+                Crafting Digital Experiences That Leave a Lasting Impression
+            </h3>
+
+            <p>
+                Every line of code tells a story. Discover how modern web
+                development combines creativity, design, and technology to
+                build experiences users love.
+            </p>
+
+            <div class="featured-info">
+
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                    Golden Ink
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-calendar"></i>
+                    August 2026
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    5 min read
+                </span>
+
+            </div>
+
+            <a href="blog.html" class="primary-btn">
+
+                Read Full Story
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= LATEST ARTICLES ================= -->
+
+<section class="latest">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>Latest Articles</h2>
+
+            <p>
+                Fresh stories from our writers.
+            </p>
+
+        </div>
+
+        <a href="blog.html" class="secondary-btn">
+            View All
+        </a>
+
+    </div>
+
+    <div id="blogList">
+
+        <!-- JavaScript loads blogs here -->
+
+    </div>
+
+</section>
+
+    <!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <div class="newsletter-box">
+
+        <h2>Stay Inspired</h2>
+
+        <p>
+            Receive carefully selected stories, creative ideas,
+            and the latest articles directly in your inbox.
+        </p>
+
+        <form id="newsletterForm">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                aria-label="Email address"
+                required>
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>Golden Ink</h2>
+
+            <p>
+
+                Crafted with passion using
+                HTML, CSS, JavaScript & Node.js.
+
+            </p>
+
+            <div class="socials">
+
+                <i class="fab fa-github"></i>
+
+                <i class="fab fa-linkedin"></i>
+
+                <i class="fab fa-instagram"></i>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- Toast Notification -->
+
+<div id="toast" class="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div>
+
+        <h4 id="toastTitle">Success</h4>
+
+        <p id="toastMessage">
+            Message
+        </p>
+
+    </div>
+
+</div>
+
+
+
+    <script src="script.js" defer></script>
+
+
+</body>
+
+</html>

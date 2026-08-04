@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Golden Ink | Articles</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-feather"></i>
+            <span>Golden Ink</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html" class="active">Articles</a></li>
+            <li><a href="add-blog.html" class="gold-btn">Write Story</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+    <section class="page-hero">
+
+        <p class="hero-tag">
+            Our Collection
+        </p>
+
+        <h1>
+            Latest Stories
+        </h1>
+
+        <p>
+            Discover inspiring articles, creative ideas and thoughtful experiences.
+        </p>
+
+    </section>
+
+    <section class="blog-section">
+
+        <div class="blog-header">
+
+            <h2>
+                Featured Articles
+            </h2>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search stories...">
+
+        </div>
+
+        <div id="blogList" class="blog-grid">
+
+            <!-- JavaScript loads blogs here -->
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            placeholder="Search articles...">
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories">
+
+    <button class="category-btn active">
+        All
+    </button>
+
+    <button class="category-btn">
+        Technology
+    </button>
+
+    <button class="category-btn">
+        Lifestyle
+    </button>
+
+    <button class="category-btn">
+        Travel
+    </button>
+
+    <button class="category-btn">
+        Programming
+    </button>
+
+</section>
+
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="featured-banner">
+
+    <div class="banner-content">
+
+        <span class="featured-tag">
+
+            Featured Article
+
+        </span>
+
+        <h2>
+
+            Designing Experiences That People Remember
+
+        </h2>
+
+        <p>
+
+            Great design is more than aesthetics. It's about creating
+            meaningful experiences through creativity and technology.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BLOGS ================= -->
+
+<section class="blog-section">
+
+    <h2>Latest Articles</h2>
+
+    <div id="blogList">
+
+        <!-- JavaScript loads blog cards -->
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>Golden Ink</h2>
+
+        <p>
+            Every story deserves a beautiful presentation.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Toast Notification -->
+
+<div id="toast" class="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div>
+
+        <h4 id="toastTitle">Success</h4>
+
+        <p id="toastMessage">
+            Message
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Delete Modal -->
+
+<div id="deleteModal" class="modal">
+
+    <div class="modal-box">
+
+        <i class="fa-solid fa-trash-can delete-icon"></i>
+
+        <h2>Delete Story?</h2>
+
+        <p>
+
+            This action cannot be undone.
+
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="cancel-btn"
+            onclick="closeDeleteModal()">
+
+                Cancel
+
+            </button>
+
+            <button class="delete-btn"
+            onclick="confirmDelete()">
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Edit Story Modal -->
+
+<div id="editModal" class="modal">
+
+    <div class="edit-box">
+
+        <h2>
+
+            ✨ Edit Story
+
+        </h2>
+
+        <input
+        id="editTitle"
+        type="text"
+        placeholder="Story Title">
+
+        <input
+        id="editAuthor"
+        type="text"
+        placeholder="Author">
+
+        <textarea
+        id="editContent"
+        placeholder="Write your story..."></textarea>
+
+        <div class="modal-buttons">
+
+            <button
+            class="cancel-btn"
+            onclick="closeEdit()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="gold-btn"
+            onclick="saveEdit()">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="deleteModal" class="modal">
+
+    <div class="modal-box">
+
+        <h2>Delete Story?</h2>
+
+        <p>
+            This action cannot be undone.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button
+                class="secondary-btn"
+                onclick="closeDeleteModal()">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="delete-btn"
+                onclick="confirmDelete()">
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="editModal" class="modal">
+
+    <div class="edit-box">
+
+        <h2>Edit Story</h2>
+
+        <input
+            id="editTitle"
+            type="text"
+            placeholder="Story Title">
+
+        <input
+            id="editAuthor"
+            type="text"
+            placeholder="Author">
+
+        <select id="editCategory">
+
+            <option>Technology</option>
+            <option>Programming</option>
+            <option>Education</option>
+            <option>Lifestyle</option>
+            <option>Travel</option>
+
+        </select>
+
+        <textarea
+            id="editContent"
+            rows="8"
+            placeholder="Story Content"></textarea>
+
+        <div class="modal-buttons">
+
+            <button
+                class="secondary-btn"
+                onclick="closeEdit()">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="primary-btn"
+                onclick="saveEdit()">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div>
+
+        <h4 id="toastTitle">
+            Success
+        </h4>
+
+        <p id="toastMessage">
+            Message
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
