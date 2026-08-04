@@ -1039,25 +1039,34 @@ h2::after{
    BUTTONS
 ========================================== */
 
-.editor-buttons{
+.editor-buttons button {
 
-    display:flex;
+    cursor: pointer;
 
-    justify-content:flex-end;
+    font-size: 16px;
 
-    gap:20px;
+    border: none;
 
-    margin-top:15px;
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    background: #b08d57;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
 
 }
 
-.editor-buttons button{
 
-    cursor:pointer;
+.editor-buttons button:hover {
 
-    font-size:16px;
+    background: #8c6b3f;
 
-    border:none;
+    transform: translateY(-2px);
 
 }
 
